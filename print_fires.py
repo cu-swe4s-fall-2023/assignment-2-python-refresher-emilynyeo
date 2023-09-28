@@ -1,35 +1,38 @@
-#Savanna Fires = 3
-#Forest Fires = 4
-#Fires in organic soils = 21
-#Fire in humid tropic forests = 22
-
+import argparse
 from my_utils import *
 
-country='South Africa'
-county_column = 1
-file_name = 'Agrofood_co2_emission.csv'
+parser = argparse.ArgumentParser(
+    prog='print-fires',
+    description='Calculate the total number of fires.',
+    epilog='parser argument for printing fires issue')
 
-savanna_fires = get_column("Agrofood_co2_emission.csv",0,"South Africa",3)
-forest_fires = get_column("Agrofood_co2_emission.csv",0,"South Africa",4)
-organic_soils_fires = get_column("Agrofood_co2_emission.csv",0,"South Africa",22)
-humid_tropic_fires = get_column("Agrofood_co2_emission.csv",0,"South Africa",23)
+parser.add_argument('--country',
+                    type=str,
+                    default='South Africa',
+                    help='Name of the country')
+parser.add_argument('--country_column',
+                    type=int,
+                    default=0,
+                    help='Column index of the country in the CSV file')
+parser.add_argument('--fires_column',
+                    type=int,
+                    default=23,
+                    help='Column index of the fires in the CSV file')
+parser.add_argument('--file_name',
+                    type=str,
+                    default='Agrofood_co2_emission.csv',
+                    help='Name of the CSV file')
 
-number_of_fires = 0
+args = parser.parse_args()
+print(args.country)
 
-for fire in savanna_fires:
-    number_of_fires = number_of_fires + float(fire)
+country = args.country
+country_column = args.country_column
+fires_column = args.fires_column
+file_name = args.file_name
 
-for fire in forest_fires:
-    number_of_fires = number_of_fires + float(fire) 
-    
-for fire in organic_soils_fires:
-    number_of_fires = number_of_fires + float(fire) 
+all_fires = get_column(file_name, country_column, country, fires_column)
 
-for fire in humid_tropic_fires:
-    number_of_fires = number_of_fires + float(fire)
+number_of_fires = sum(all_fires)
 
 print(number_of_fires)
-
-
-
-
