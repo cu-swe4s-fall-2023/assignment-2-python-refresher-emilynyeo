@@ -1,3 +1,6 @@
+import statistics
+import math
+
 def get_column(file_name, query_column, query_value, result_column):
     """
     Extracts specifiec data of interest from CSV file.
@@ -55,9 +58,50 @@ def get_column(file_name, query_column, query_value, result_column):
 
     return result_array
 
+def mean(array):
+    """
+    Extracts the mean from an array.
+
+    Args: 
+        array: List of integers
+
+    Returns:
+        Mean of the array/list of integers.
+    """
+    return statistics.mean(array)
+
+def median(array):
+    """
+    Extracts the median from an array
+
+    Args:
+        array: list of integers
+
+    Returns: 
+        Median of the array/list of integers
+    """
+    return statistics.median(array)
+
+def std_dev(array):
+    """
+    Calculates the standard deviation of the array/list of integers.
+
+    Args:
+        array: list of integers
+
+    Returns:
+        Returns the standard deviation of the array/list of integers.
+    """
+    return np.std(array)
+
 def main():
     result = get_column('Agrofood_co2_emission.csv', 0, 'South Africa', 1)
     print(result)
+
+    if result:
+        print(f"Mean: {mean(result)}")
+        print(f"Median: {median(result)}")
+        print(f"Standard Deviation: {std_dev(result)}")
 
 if __name__ == '__main__':
     main()
