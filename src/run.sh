@@ -1,6 +1,4 @@
 #!/bin/bash
-sys import
-sys.path.insert(0, 'ls ../') #noqa
 
 set -e 
 set -u 

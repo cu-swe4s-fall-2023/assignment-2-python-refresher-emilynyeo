@@ -1,37 +1,15 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/oQi7O4AA)
-# python-refresher
+# Assignment 2,3 and 4
 
-# first commit
+This repository has been used over the weeks to learn about best coding practices, unit and functional tests, writing funtions, opening and closing files, file paths and much more. Below is an outline of the directories and files included, and how they have changed over time. 
 
-Completed the implementation of get_column() in my_utils.py such that
-a. get_column() opened the file named file_name and processed it line by line
-b. for each line
-	i. split the line into an array.
-	ii. checked to see if the value in the query_column position of the array matches the value stored in the query_value variable.
-	iii. when the above condition was met, added the value in the result_column position to an array.
-c. returned the array storing the column values.
+- ### src
+This contains the main code files, excluding data and tests. These files must be run from this directory. 
+	- **my_utils.py** : Includes definitions of functions and their intended usage. Details of the functions explicitly outlined using docstring. Try and except statements added, with errors specified for file not found and errors converting arrays to floats or integers. And a main function was specified. 
+	- **print_fires.py**: A script that utilizes functions defined in my_utils.py. 
+	- **run.sh**: A bash script to submit and run print_fires.py with examples of what will and wont work specified. 
 
-# second commit 
-
-Updated print_fires.py to correctly use get_column() to print the number of fires in South Africa (added all 4 fire types together). 
-
-made an sh file to run print_fires.py
-
-# for assignmemt 3, the files were changed the following ways:
-
-1. To my_utils.py:
-	- details of the function get_column were explicitly outlined using docstring. 
-	- try and except statements added, with errors specified for file not found and errors converting arrays to floats or integers.
-	- a main function was specified.
-
-2. To print_fires.py
-	- argparse was used to add parser arguments of interest. Including:
-		- '--country': Which is where you would specify the country you are interested in
-		- '--country_column': The column index of the country
-		- '--fires_column': The column index of the number of fires
-		- '--file_name': The name of the data file being inspected
-
-3. To run.sh
-	 - Updated the file to run the print_fires.py script with:
-	 	- an exampple that does work
-	 	- two example that do not work
+- ### test
+This directory contains the unit and functional tests for the files in the src. This also contains test data. Each of these files should be run from the directory in which they are located. 
+	- **/data/Agro2_co2_subset.csv** : Example test file on which functional tests can be run
+	- **/unit/test_my_utils.py** : A file containing unit tests for each of the functions in my_utils.py. Includes randomness and positive and negative test cases. 
+	- **/function/test_print_fires.sh** : A bash script using the Stupid Simple Bash Testing framework to  for print_fires.py using a test file. 
