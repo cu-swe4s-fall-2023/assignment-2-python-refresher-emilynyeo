@@ -1,4 +1,6 @@
 # To test this file: python -m unittest test_my_utils.py
+sys import
+sys.path.insert(0, 'ls ../../src') #noqa
 
 import unittest
 import statistics
