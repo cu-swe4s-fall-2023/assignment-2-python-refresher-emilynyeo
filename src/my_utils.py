@@ -1,5 +1,6 @@
 import statistics
 import math
+import numpy as np
 
 def get_column(file_name, query_column, query_value, result_column):
     """
@@ -55,6 +56,7 @@ def get_column(file_name, query_column, query_value, result_column):
 
     except FileNotFoundError:
         print(f"Couldn't find the file '{file_name}'.")
+        return None
 
     return result_array
 
@@ -68,7 +70,9 @@ def mean(array):
     Returns:
         Mean of the array/list of integers.
     """
-    return statistics.mean(array)
+    if len(array) == 0:
+        return None 
+    return sum(array)/len(array)
 
 def median(array):
     """
@@ -80,7 +84,23 @@ def median(array):
     Returns: 
         Median of the array/list of integers
     """
-    return statistics.median(array)
+    if len(array) == 0:
+        return None
+
+    array = sorted(array)
+    middle = (len(array) - 1) / 2
+
+    if middle == int(middle):
+        return array[int(middle)]
+
+    option1 = math.floor(middle)
+    option2 = math.ceil(middle)
+
+    option1 = array[option1]
+    option2 = array[option2]
+    s = option1 + option2
+
+    return s / 2
 
 def std_dev(array):
     """
@@ -92,11 +112,19 @@ def std_dev(array):
     Returns:
         Returns the standard deviation of the array/list of integers.
     """
-    return np.std(array)
+    if len(array) < 2:
+        return None
+
+    s = 0
+    m = mean(array)
+    for x in array:
+        dif = x - m
+        s = s + dif*dif
+    s = s/(len(array)-1)
+    return math.sqrt(s)
 
 def main():
     result = get_column('Agrofood_co2_emission.csv', 0, 'South Africa', 1)
-    print(result)
 
     if result:
         print(f"Mean: {mean(result)}")
