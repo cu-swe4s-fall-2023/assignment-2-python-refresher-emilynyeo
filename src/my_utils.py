@@ -2,6 +2,7 @@ import statistics
 import math
 import numpy as np
 
+
 def get_column(file_name, query_column, query_value, result_column):
     """
     Extracts specifiec data of interest from CSV file.
@@ -45,7 +46,7 @@ def get_column(file_name, query_column, query_value, result_column):
 
                 # Check if query_column value matches query_value
                 if len(line_array) > query_column and \
-                line_array[query_column] == query_value:
+                        line_array[query_column] == query_value:
                     try:
                         fire_num = float(line_array[result_column])
                         fire_int = int(fire_num)
@@ -60,19 +61,21 @@ def get_column(file_name, query_column, query_value, result_column):
 
     return result_array
 
+
 def mean(array):
     """
     Extracts the mean from an array.
 
-    Args: 
+    Args:
         array: List of integers
 
     Returns:
         Mean of the array/list of integers.
     """
     if len(array) == 0:
-        return None 
+        return None
     return sum(array)/len(array)
+
 
 def median(array):
     """
@@ -81,7 +84,7 @@ def median(array):
     Args:
         array: list of integers
 
-    Returns: 
+    Returns:
         Median of the array/list of integers
     """
     if len(array) == 0:
@@ -101,6 +104,7 @@ def median(array):
     s = option1 + option2
 
     return s / 2
+
 
 def std_dev(array):
     """
@@ -123,6 +127,7 @@ def std_dev(array):
     s = s/(len(array)-1)
     return math.sqrt(s)
 
+
 def main():
     result = get_column('Agrofood_co2_emission.csv', 0, 'South Africa', 1)
 
@@ -130,6 +135,7 @@ def main():
         print(f"Mean: {mean(result)}")
         print(f"Median: {median(result)}")
         print(f"Standard Deviation: {std_dev(result)}")
+
 
 if __name__ == '__main__':
     main()

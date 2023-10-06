@@ -23,15 +23,15 @@ parser.add_argument('--file_name',
                     default='Agrofood_co2_emission.csv',
                     help='Name of the CSV file')
 parser.add_argument('--stats',
-                    type = str,
-                    help = 'Column index for fires Column',
-                    required = False,
-                    default = None)
+                    type=str,
+                    help='Column index for fires Column',
+                    required=False,
+                    default=None)
 parser.add_argument('--command',
-                    type = str,
-                    help = 'which stat tool you want to run',
-                    required = False,
-                    default = None)
+                    type=str,
+                    help='which stat tool you want to run',
+                    required=False,
+                    default=None)
 
 args = parser.parse_args()
 print(args.country)
