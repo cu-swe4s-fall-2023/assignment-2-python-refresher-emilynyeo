@@ -27,14 +27,13 @@ jobs:
       - run: |
           cd test/function/
           bash test_print_fires.sh
-          
+
       - run: |
           cd src/
           bash run.sh
 
   run_style_tests:
     runs-on: macOS-ventura-13.4.1
-    defaults:
       run:
         shell: pip install pycodestyle
     steps:
