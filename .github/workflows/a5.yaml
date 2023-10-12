@@ -34,7 +34,7 @@ jobs:
 
   run_style_tests:
     runs-on: macOS-ventura-13.4.1
-      run:
+      - run: |
         shell: pip install pycodestyle
     steps:
       - uses: actions/checkout@v2
