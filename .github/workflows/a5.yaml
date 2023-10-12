@@ -34,10 +34,9 @@ jobs:
 
   run_style_tests:
     runs-on: macOS-ventura-13.4.1
-      - run: |
-        shell: pip install pycodestyle
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
       - run: |
+          pip install pycodestyle
           find . -name "*.py" -not -path "./.venv/*" -print0 | xargs -0 -n 1 pycodestyle
