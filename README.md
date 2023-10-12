@@ -13,3 +13,6 @@ This directory contains the unit and functional tests for the files in the src. 
 	- **/data/Agro2_co2_subset.csv** : Example test file on which functional tests can be run
 	- **/unit/test_my_utils.py** : A file containing unit tests for each of the functions in my_utils.py. Includes randomness and positive and negative test cases. 
 	- **/function/test_print_fires.sh** : A bash script using the Stupid Simple Bash Testing framework to  for print_fires.py using a test file. 
+
+- ### .github/workflow/
+This continuous integration folder was created and an initial workflow for branch pushes and pull requests was made in `a5.yaml`.
