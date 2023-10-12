@@ -23,7 +23,6 @@ jobs:
         shell: bash el {0}
     steps:
       - uses: action/checkout@v2
-      - uses: 
       - run: |
           cd test/function/
           bash test_print_fires.sh
