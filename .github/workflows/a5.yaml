@@ -27,7 +27,8 @@ jobs:
       - run: |
           cd test/function/
           bash test_print_fires.sh
-
+          
+      - run: |
           cd src/
           bash run.sh
 
