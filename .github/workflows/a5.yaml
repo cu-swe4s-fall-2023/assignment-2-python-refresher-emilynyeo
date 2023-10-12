@@ -13,7 +13,7 @@ jobs:
       - uses: action/checkout@v2
       - uses: actions/setup-python@v2
       - run: |
-          cd test/unit
+          cd test/unit/
           python -m unittest test_my_utils
 
   run_func_tests:
