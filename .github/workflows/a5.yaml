@@ -2,8 +2,7 @@ name: Unit tests
 
 on:
   push:
-    branches-ignore:
-      - '*'
+    branches: [ '*' ]
   pull_request:
     branches: [ main ]
 
@@ -38,9 +37,7 @@ jobs:
       run:
         shell: pip install pycodestyle
     steps:
-      - uses: action/checkout@v2
+      - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
-        with:
-
       - run: |
-      find . -name "*.py" -not -path "./.venv/*" -print0 | xargs -0 -n 1 pycodestyle
+          find . -name "*.py" -not -path "./.venv/*" -print0 | xargs -0 -n 1 pycodestyle
