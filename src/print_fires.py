@@ -1,6 +1,11 @@
 import argparse
 from my_utils import *
 
+# Create a custom action for the 'country' argument
+class CountryAction(argparse.Action):
+    def __call__(self, parser, namespace, values, option_string=None):
+        setattr(namespace, self.dest, values)
+
 parser = argparse.ArgumentParser(
     prog='print-fires',
     description='Calculate the total number of fires.',
@@ -8,6 +13,7 @@ parser = argparse.ArgumentParser(
 
 parser.add_argument('--country',
                     type=str,
+                    action=CountryAction,
                     default='South Africa',
                     help='Name of the country')
 parser.add_argument('--country_column',
