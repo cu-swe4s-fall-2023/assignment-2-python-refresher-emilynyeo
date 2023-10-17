@@ -4,10 +4,10 @@ import math
 import os
 import random
 import numpy as np
-from my_utils import *
 import sys
 
 sys.path.insert(0, '../../src')  # noqa
+from my_utils import *
 
 # To test this file: python -m unittest test_my_utils.py
 
