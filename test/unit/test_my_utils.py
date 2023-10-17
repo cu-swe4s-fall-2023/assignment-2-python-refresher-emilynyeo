@@ -5,11 +5,11 @@ import os
 import random
 import numpy as np
 from my_utils import *
-sys import
+import sys
 
-sys.path.insert(0, 'ls ../../src') #noqa
+sys.path.insert(0, '../../src')  # noqa
 
-#  To test this file: python -m unittest test_my_utils.py
+# To test this file: python -m unittest test_my_utils.py
 
 
 class TestMyUtils(unittest.TestCase):
