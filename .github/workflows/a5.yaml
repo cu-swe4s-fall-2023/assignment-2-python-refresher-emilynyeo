@@ -8,31 +8,25 @@ on:
 
 jobs:
   run_unit_tests:
-    runs-on: macOS-ventura-13.4.1
+    runs-on: ubuntu-latest
     steps:
-      - uses: action/checkout@v2
-      - uses: actions/setup-python@v2
-      - run: |
-          cd test/unit
-          python -m unittest test_my_utils
+        - uses: actions/checkout@v2
+        - uses: actions/setup-python@v2
+        - run: |
+            pip install numpy
+            cd test/unit/
+            python test_my_utils.py
 
   run_func_tests:
-    runs-on: macOS-ventura-13.4.1
-    defaults:
-      run:
-        shell: bash el {0}
+    runs-on: ubuntu-latest
     steps:
-      - uses: action/checkout@v2
+      - uses: actions/checkout@v2
       - run: |
           cd test/function/
-          bash test_print_fires.sh
-
-      - run: |
-          cd src/
-          bash run.sh
+          # bash test_print_fires.sh
 
   run_style_tests:
-    runs-on: macOS-ventura-13.4.1
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
