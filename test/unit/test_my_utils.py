@@ -9,7 +9,7 @@ import sys
 sys.path.insert(0, '../../src')  # noqa
 from my_utils import *
 
-# To test this file: python -m unittest test_my_utils.py
+# To test this file: python -m unittest test_my_utils.py.
 
 
 class TestMyUtils(unittest.TestCase):
