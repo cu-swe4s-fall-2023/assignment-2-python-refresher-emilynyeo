@@ -1,4 +1,4 @@
-COUNTRIES = ['Botswana', 'Namibia', 'Mozambique']
+COUNTRIES = ['Botswana', 'Namibia', 'Mozambique', 'Lesotho']
 
 def read_countries(file_name):
     countries = []
@@ -9,36 +9,37 @@ def read_countries(file_name):
 
 rule all:
     input:
+        expand('{x}_pt.png', x=COUNTRIES),
+        #expand('{x}_hist.png', x=COUNTRIES),
         expand('{x}_ty.png', x=COUNTRIES)
 
 rule download_data:
     output:
-        '../../test/data/Agro2_co2_emissions.csv'
+        'Agro2_co2_emissions.csv'
     shell:
         """
-        cd ../../test/data
         wget -O {output} 'https://drive.google.com/uc?export=download&id=1Wytf3ryf9EtOwaloms8HEzLG0yjtRqxr'
         """
 
 rule get_data:
     input:
-        '../../test/data/Agro2_co2_emissions.csv'
+        'Agro2_co2_emissions.csv'
     output:
         '{x}_gd.txt'
     shell:
         'python get_data.py {input} {wildcards.x} {output}'
 
 rule hist_test:
-	input:
-		'{x}_gd.txt'
-	output:
-		'{x}_hist.png'
-	shell:
-		'python hist_test.py {input} {output} {wildcards.x} Populations Number.'
+    input:
+        expand('{x}_gd.txt', x=COUNTRIES)
+    output:
+        expand('{x}_hist.png', x=COUNTRIES)
+    shell:
+        'python hist_test.py {input} {output} {wildcards}'
 
 rule temp_years:
 	input:
-		'../../test/data/Agro2_co2_emissions.csv'
+		'Agro2_co2_emissions.csv'
 	output:
 		'{x}_ty.png'
 	shell:
@@ -46,7 +47,7 @@ rule temp_years:
 
 rule pops_temp:
 	input:
-		'../../test/data/Agro2_co2_emissions.csv'
+		'Agro2_co2_emissions.csv'
 	output:
 		'{x}_pt.png'
 	shell:
