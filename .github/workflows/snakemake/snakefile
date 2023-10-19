@@ -35,3 +35,14 @@ rule hist_test:
 		'{x}_hist.png'
 	shell:
 		'python hist_test.py {input} {output} {wildcards.x} Populations Number.'
+
+rule temp_years:
+	input:
+		'../../test/data/Agro2_co2_emissions.csv'
+	output:
+		'{x}_ty.png'
+	shell:
+		'python plot_temp_years.py {input} {output} {wildcards.x}'
+
+
+
