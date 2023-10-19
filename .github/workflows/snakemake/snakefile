@@ -9,7 +9,7 @@ def read_countries(file_name):
 
 rule all:
     input:
-        expand('{x}_gd.txt', x=COUNTRIES)
+        expand('{x}_hist.png', x=COUNTRIES)
 
 rule download_data:
     output:
@@ -25,15 +25,13 @@ rule get_data:
         '../../test/data/Agro2_co2_emissions.csv'
     output:
         '{x}_gd.txt'
-    params:
-        script='get_data.py'
     shell:
-        'python {params.script} {input} {wildcards.x} {output}'
+        'python get_data.py {input} {wildcards.x} {output}'
 
 rule hist_test:
 	input:
-		'Namibia_gd.txt'
+		'{x}_gd.txt'
 	output:
-		'Namibia.png'
+		'{x}_hist.png'
 	shell:
-		'python hist.py {input} {output} Namibia Fires Freq.'
+		'python hist_test.py {input} {output} {wildcards.x} Populations Number.'
