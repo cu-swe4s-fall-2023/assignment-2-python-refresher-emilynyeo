@@ -1,4 +1,4 @@
-COUNTRIES = ['Italy', 'SA']
+COUNTRIES = ['Botswana', 'Namibia', 'Mozambique']
 
 def read_countries(file_name):
     countries = []
@@ -29,3 +29,11 @@ rule get_data:
         script='get_data.py'
     shell:
         'python {params.script} {input} {wildcards.x} {output}'
+
+rule hist_test:
+	input:
+		'Namibia_gd.txt'
+	output:
+		'Namibia.png'
+	shell:
+		'python hist.py {input} {output} Namibia Fires Freq.'
