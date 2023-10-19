@@ -1,5 +1,0 @@
-Building DAG of jobs...
-MissingInputException in rule all in file /Users/emily/projects/research/class_fall_2023/CSCI 6118 Software engineering for scientists/assignments/assignment-2-python-refresher-emilynyeo/.github/workflows/snakemake/Snakefile, line 1:
-Missing input files for rule all:
-    affected files:
-        test/data/Agro2_co2_emissions.csv
