@@ -1,0 +1,2 @@
+SyntaxError in file /Users/emily/projects/research/class_fall_2023/CSCI 6118 Software engineering for scientists/assignments/assignment-2-python-refresher-emilynyeo/.github/workflows/snakemake/Snakefile, line 25:
+Unexpected keyword input_files in rule definition (Snakefile, line 25)

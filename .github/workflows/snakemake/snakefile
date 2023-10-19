@@ -1,0 +1,31 @@
+COUNTRIES = ['Italy', 'SA']
+
+def read_countries(file_name):
+    countries = []
+    with open(file_name, 'r') as f:
+        for line in f:
+            countries.append(line.strip())
+    return countries
+
+rule all:
+    input:
+        expand('{x}_gd.txt', x=COUNTRIES)
+
+rule download_data:
+    output:
+        '../../test/data/Agro2_co2_emissions.csv'
+    shell:
+        """
+        cd ../../test/data
+        wget -O {output} 'https://drive.google.com/uc?export=download&id=1Wytf3ryf9EtOwaloms8HEzLG0yjtRqxr'
+        """
+
+rule get_data:
+    input:
+        '../../test/data/Agro2_co2_emissions.csv'
+    output:
+        '{x}_gd.txt'
+    params:
+        script='get_data.py'
+    shell:
+        'python {params.script} {input} {wildcards.x} {output}'

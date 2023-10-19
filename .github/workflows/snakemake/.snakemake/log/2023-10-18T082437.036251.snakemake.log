@@ -1,0 +1,29 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job         count
+--------  -------
+all             1
+get_data        1
+total           2
+
+Select jobs to execute...
+
+[Wed Oct 18 08:24:37 2023]
+rule get_data:
+    input: ../../test/data/Agro2_co2_emissions.csv
+    output: ['Italy', 'SA']_gd.txt
+    jobid: 1
+    reason: Missing output files: ['Italy', 'SA']_gd.txt
+    wildcards: x=['Italy', 'SA']
+    resources: tmpdir=/var/folders/4l/kqxc4rwn4lj10fzv9hw4xxsr0000gn/T
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule get_data in file /Users/emily/projects/research/class_fall_2023/CSCI 6118 Software engineering for scientists/assignments/assignment-2-python-refresher-emilynyeo/.github/workflows/snakemake/Snakefile, line 22:
+Job 1  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+['Italy', 'SA']_gd.txt
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-18T082437.036251.snakemake.log
