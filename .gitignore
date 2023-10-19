@@ -1,5 +1,6 @@
 view?usp=sharing
 Agro2_co2_emissions.csv
+*.snakemake/metadata/*
 *.snakemake.log
 *.csv
 ssshtest
