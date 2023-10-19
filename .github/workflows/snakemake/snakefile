@@ -9,7 +9,7 @@ def read_countries(file_name):
 
 rule all:
     input:
-        expand('{x}_hist.png', x=COUNTRIES)
+        expand('{x}_ty.png', x=COUNTRIES)
 
 rule download_data:
     output:
@@ -44,5 +44,10 @@ rule temp_years:
 	shell:
 		'python plot_temp_years.py {input} {output} {wildcards.x}'
 
-
-
+rule pops_temp:
+	input:
+		'../../test/data/Agro2_co2_emissions.csv'
+	output:
+		'{x}_pt.png'
+	shell:
+		'python trends_pt.py {input} {output} {wildcards.x}'	
