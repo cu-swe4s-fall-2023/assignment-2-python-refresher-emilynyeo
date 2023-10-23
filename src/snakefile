@@ -9,46 +9,39 @@ def read_countries(file_name):
 
 rule all:
     input:
-        expand('{x}_pt.png', x=COUNTRIES),
-        #expand('{x}_hist.png', x=COUNTRIES),
-        expand('{x}_ty.png', x=COUNTRIES)
+        expand('../doc/{x}_ty.png', x=COUNTRIES),
+        expand('../doc/{x}_pt.png', x=COUNTRIES),
+        expand('../doc/{x}_py.png', x=COUNTRIES)
 
 rule download_data:
     output:
-        'Agro2_co2_emissions.csv'
+        'data/Agro2_co2_emissions.csv'
     shell:
         """
-        wget -O {output} 'https://drive.google.com/uc?export=download&id=1Wytf3ryf9EtOwaloms8HEzLG0yjtRqxr'
+        cd data/
+        wget -O data/Agro2_co2_emissions.csv 'https://drive.google.com/uc?export=download&id=1Wytf3ryf9EtOwaloms8HEzLG0yjtRqxr'
         """
-
-rule get_data:
-    input:
-        'Agro2_co2_emissions.csv'
-    output:
-        '{x}_gd.txt'
-    shell:
-        'python get_data.py {input} {wildcards.x} {output}'
-
-rule hist_test:
-    input:
-        expand('{x}_gd.txt', x=COUNTRIES)
-    output:
-        expand('{x}_hist.png', x=COUNTRIES)
-    shell:
-        'python hist_test.py {input} {output} {wildcards}'
 
 rule temp_years:
-	input:
-		'Agro2_co2_emissions.csv'
-	output:
-		'{x}_ty.png'
-	shell:
-		'python plot_temp_years.py {input} {output} {wildcards.x}'
+    input:
+        'data/Agro2_co2_emissions.csv'
+    output:
+        '../doc/{x}_ty.png'
+    shell:
+        'python3 plot_temp_years.py {input} {output} {wildcards.x}' 
 
 rule pops_temp:
-	input:
-		'Agro2_co2_emissions.csv'
-	output:
-		'{x}_pt.png'
-	shell:
-		'python trends_pt.py {input} {output} {wildcards.x}'	
+    input:
+        'data/Agro2_co2_emissions.csv'
+    output:
+        '../doc/{x}_pt.png'
+    shell:
+        'python3 trends_pt.py {input} {output} {wildcards.x}'
+
+rule pop_years:
+    input:
+        'data/Agro2_co2_emissions.csv'
+    output:
+        '../doc/{x}_py.png'
+    shell:
+        'python3 pop_years.py {input} {output} {wildcards.x}'

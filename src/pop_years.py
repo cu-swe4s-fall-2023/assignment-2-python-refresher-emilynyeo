@@ -1,13 +1,15 @@
 import matplotlib.pyplot as plt
 from my_utils import get_column
+import sys
 
 # Specify the file and columns of interest
-file_name = 'Agrofood_co2_emission.csv'
 country_column = 0  
 year_column = 1   
 rural_pop = 25  
 urban_pop = 26 
-country_of_interest = 'Namibia'
+file_name = sys.argv[1]
+country_of_interest = sys.argv[3]
+out_file = sys.argv[2]
 
 rural_data = get_column(file_name, country_column, country_of_interest, rural_pop)
 urban_data = get_column(file_name, country_column, country_of_interest, urban_pop)
@@ -37,4 +39,6 @@ else:
     plt.ylabel("Population")
     plt.grid(True)
     plt.legend()
-    plt.show()
+
+    plt.savefig(out_file, format='png',bbox_inches='tight')
+    plt.close()
