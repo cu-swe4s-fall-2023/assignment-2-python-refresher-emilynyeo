@@ -12,7 +12,10 @@ colors = ['b', 'g', 'r', 'c']
 # Create a plot for each country
 for i, (input_file, country) in enumerate(zip(input_files, countries)):
     country_data = pd.read_csv(input_file, sep='\t')
-    plt.plot(country_data['Year'], country_data['Temperature'], label=f'{country}', color=colors[i])
+    plt.plot(country_data['Year'],
+             country_data['Temperature'],
+             label=f'{country}',
+             color=colors[i])
 
 # Customize the plot
 plt.xlabel('Year')
@@ -21,5 +24,5 @@ plt.title('Temperature Changes Over the Years')
 plt.legend()
 
 # Save the plot to the output file
-plt.savefig(out_file, format='png',bbox_inches='tight')
+plt.savefig(out_file, format='png', bbox_inches='tight')
 plt.close()
