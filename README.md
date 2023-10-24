@@ -46,7 +46,6 @@ This analysis seaks to identify the shifts between urban and rural populations o
 
 	**note**: Should you run this same analysis on seperate countries, simply include them to the names listed in the first line of the snakefile and rerun it. 
 
-
 This is very much a work in progress, as this repository has also been used over the weeks to learn about best coding practices, unit and functional tests, writing funtions, opening and closing files, file paths and much more. Below is an outline of the directories and files included, and how they have changed over time. 
 
 ### src
