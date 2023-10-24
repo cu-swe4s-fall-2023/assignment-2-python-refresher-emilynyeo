@@ -39,7 +39,7 @@ This analysis seaks to identify the shifts between urban and rural populations o
 	- A CSV file containing the data for use. This assignment used Agrofood_co2_emission.csv from https://drive.google.com/drive/folders/15dnNnOEjDZDvwzM-_tGGtWjTbNL669i7?usp=drive_link
 
 - Clone the repository using `git clone <this repo>`
-	- Ensure python, wget and snakemake are installed on your device too. 
+	- Ensure python, wget and snakemake are installed on your device too. The snakefile requires python3 to run. 
 
 - Run the snakefile from the src directory
 	- The figures of this analysis were created by running `snakemake -c1`, which runs all the rules. Descriptions of the files utilized by snakemake are included under the src section below. 
