@@ -73,4 +73,4 @@ This continuous integration folder was created and an initial workflow for
 branch pushes and pull requests was made in `a5.yaml`. The following will occur every time a branch is pushed or a pull request is made:
 	- Unit tests will be run.
     - Functional tests will be run.
-    - Style checks will be run.
+    - Style checks will be run using pycodestyle and PEP8. 
