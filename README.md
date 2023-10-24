@@ -8,28 +8,28 @@ This analysis seaks to identify the shifts between urban and rural populations o
 - 1. The plots below show the changes in population trends over the years in each of the countries bordering South Africa. As you can see, there has been a rise in Urban population numbers across all 4 countries. 
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-  <img src="/doc/Namibia_py.png" alt="Image 1" style="width: 30%; margin: 2px;">
-  <img src="/doc/Lesotho_py.png" alt="Image 2" style="width: 30%; margin: 2px;">
-  <img src="/doc/Mozambique_py.png" alt="Image 3" style="width: 30%; margin: 2px;">
-  <img src="/doc/Botswana_py.png" alt="Image 4" style="width: 30%; margin: 2px;">
+  <img src="/doc/Namibia_py.png" alt="Image 1" style="width: 40%; margin: 2px;">
+  <img src="/doc/Lesotho_py.png" alt="Image 2" style="width: 40%; margin: 2px;">
+  <img src="/doc/Mozambique_py.png" alt="Image 3" style="width: 40%; margin: 2px;">
+  <img src="/doc/Botswana_py.png" alt="Image 4" style="width: 40%; margin: 2px;">
 </div>
 
 - 2. The plots below show the change in CO2 emission and average annual temperature changr for each of the countries. There seems to have been a rise in emissions and temperature in recent years. 
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-  <img src="/doc/Namibia_pt.png" alt="Image 1" style="width: 30%; margin: 2px;">
-  <img src="/doc/Lesotho_pt.png" alt="Image 2" style="width: 30%; margin: 2px;">
-  <img src="/doc/Mozambique_pt.png" alt="Image 3" style="width: 30%; margin: 2px;">
-  <img src="/doc/Botswana_py.pnt" alt="Image 4" style="width: 30%; margin: 2px;">
+  <img src="/doc/Namibia_pt.png" alt="Image 1" style="width: 40%; margin: 2px;">
+  <img src="/doc/Lesotho_pt.png" alt="Image 2" style="width: 40%; margin: 2px;">
+  <img src="/doc/Mozambique_pt.png" alt="Image 3" style="width: 40%; margin: 2px;">
+  <img src="/doc/Botswana_pt.png" alt="Image 4" style="width: 40%; margin: 2px;">
 </div>
 
--3. The plots below show how the changes in population trends correlate to changes in annual temperature changes:
+- 3. The plots below show how the changes in population trends correlate to changes in annual temperature changes:
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-  <img src="/doc/Namibia_ty.png" alt="Image 1" style="width: 30%; margin: 2px;">
-  <img src="/doc/Lesotho_ty.png" alt="Image 2" style="width: 30%; margin: 2px;">
-  <img src="/doc/Mozambique_ty.png" alt="Image 3" style="width: 30%; margin: 2px;">
-  <img src="/doc/Botswana_ty.png" alt="Image 4" style="width: 30%; margin: 2px;">
+  <img src="/doc/Namibia_ty.png" alt="Image 1" style="width: 40%; margin: 2px;">
+  <img src="/doc/Lesotho_ty.png" alt="Image 2" style="width: 40%; margin: 2px;">
+  <img src="/doc/Mozambique_ty.png" alt="Image 3" style="width: 40%; margin: 2px;">
+  <img src="/doc/Botswana_ty.png" alt="Image 4" style="width: 40%; margin: 2px;">
 </div>
 
 
@@ -39,10 +39,11 @@ This analysis seaks to identify the shifts between urban and rural populations o
 	- A CSV file containing the data for use. This assignment used Agrofood_co2_emission.csv from https://drive.google.com/drive/folders/15dnNnOEjDZDvwzM-_tGGtWjTbNL669i7?usp=drive_link
 
 - Clone the repository using `git clone <this repo>`
-	- Ensure python, wget and snakemake are installed on your device too. 
+	- Ensure python, wget and snakemake are installed on your device too. The snakefile requires python3 to run. 
 
 - Run the snakefile from the src directory
 	- The figures of this analysis were created by running `snakemake -c1`, which runs all the rules. Descriptions of the files utilized by snakemake are included under the src section below. 
+
 	**note**: Should you run this same analysis on seperate countries, simply include them to the names listed in the first line of the snakefile and rerun it. 
 
 
@@ -71,6 +72,9 @@ This directory contains the unit and functional tests for the files in the src. 
 - ### .github/workflow/
 This continuous integration folder was created and an initial workflow for 
 branch pushes and pull requests was made in `a5.yaml`. The following will occur every time a branch is pushed or a pull request is made:
+
 	- Unit tests will be run.
+
     - Functional tests will be run.
-    - Style checks will be run using pycodestyle and PEP8. 
+
+    - Style checks will be run using pycodestyle and PEP8.
