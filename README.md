@@ -5,7 +5,7 @@ This analysis seaks to identify the shifts between urban and rural populations o
 
 ## Results 
 
-- 1. The plots below show the changes in population trends over the years in each of the countries bordering South Africa. As you can see, there has been a rise in Urban population numbers across all 4 countries. 
+- 1. The plots below show the changes in population trends over the years in each of the countries bordering South Africa. As you can see, there has been a rise in Urban population numbers (red) across all 4 countries and a rise in rural populations (green) for all except Botswana (bottom right). 
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
   <img src="/doc/Namibia_py.png" alt="Image 1" style="width: 40%; margin: 2px;">
@@ -46,13 +46,16 @@ This analysis seaks to identify the shifts between urban and rural populations o
 
 	**note**: Should you run this same analysis on seperate countries, simply include them to the names listed in the first line of the snakefile and rerun it. 
 
-
 This is very much a work in progress, as this repository has also been used over the weeks to learn about best coding practices, unit and functional tests, writing funtions, opening and closing files, file paths and much more. Below is an outline of the directories and files included, and how they have changed over time. 
 
 ### src
 This contains the main code files, excluding data and tests. These files must be run from this directory. 
 
-- **snakefile** : a workflow to create the analysis figures. 
+- **snakefile** : a workflow to create the analysis figures. The expectation is that snakemake and python 3 are installed. It utilizes the script below:  
+
+  - **plot_temp_years.py** 
+  - **trends_pt.py**
+  - **pop_years.py**
 
 - **my_utils.py** : Includes definitions of functions and their intended usage. Details of the functions explicitly outlined using docstring. Try and except statements added, with errors specified for file not found and errors converting arrays to floats or integers. And a main function was specified. 
 
