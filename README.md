@@ -5,6 +5,8 @@ This analysis seaks to identify the shifts between urban and rural populations o
 
 ## Results 
 
+- 1. The plots below show the changes in population trends over the years in each of the countries bordering South Africa. As you can see, there has been a rise in Urban population numbers across all 4 countries. 
+
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
   <img src="/doc/Namibia_py.png" alt="Image 1" style="width: 30%; margin: 2px;">
   <img src="/doc/Lesotho_py.png" alt="Image 2" style="width: 30%; margin: 2px;">
