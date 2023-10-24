@@ -8,19 +8,19 @@ This analysis seaks to identify the shifts between urban and rural populations o
 - 1. The plots below show the changes in population trends over the years in each of the countries bordering South Africa. As you can see, there has been a rise in Urban population numbers across all 4 countries. 
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-  <img src="/doc/Namibia_py.png" alt="Image 1" style="width: 30%; margin: 2px;">
-  <img src="/doc/Lesotho_py.png" alt="Image 2" style="width: 30%; margin: 2px;">
-  <img src="/doc/Mozambique_py.png" alt="Image 3" style="width: 30%; margin: 2px;">
-  <img src="/doc/Botswana_py.png" alt="Image 4" style="width: 30%; margin: 2px;">
+  <img src="/doc/Namibia_py.png" alt="Image 1" style="width: 40%; margin: 2px;">
+  <img src="/doc/Lesotho_py.png" alt="Image 2" style="width: 40%; margin: 2px;">
+  <img src="/doc/Mozambique_py.png" alt="Image 3" style="width: 40%; margin: 2px;">
+  <img src="/doc/Botswana_py.png" alt="Image 4" style="width: 40%; margin: 2px;">
 </div>
 
 - 2. The plots below show the change in CO2 emission and average annual temperature changr for each of the countries. There seems to have been a rise in emissions and temperature in recent years. 
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-  <img src="/doc/Namibia_pt.png" alt="Image 1" style="width: 30%; margin: 2px;">
-  <img src="/doc/Lesotho_pt.png" alt="Image 2" style="width: 30%; margin: 2px;">
-  <img src="/doc/Mozambique_pt.png" alt="Image 3" style="width: 30%; margin: 2px;">
-  <img src="/doc/Botswana_pt.png" alt="Image 4" style="width: 30%; margin: 2px;">
+  <img src="/doc/Namibia_pt.png" alt="Image 1" style="width: 40%; margin: 2px;">
+  <img src="/doc/Lesotho_pt.png" alt="Image 2" style="width: 40%; margin: 2px;">
+  <img src="/doc/Mozambique_pt.png" alt="Image 3" style="width: 40%; margin: 2px;">
+  <img src="/doc/Botswana_pt.png" alt="Image 4" style="width: 40%; margin: 2px;">
 </div>
 
 - 3. The plots below show how the changes in population trends correlate to changes in annual temperature changes:
