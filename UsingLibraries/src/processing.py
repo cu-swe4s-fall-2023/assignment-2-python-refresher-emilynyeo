@@ -67,5 +67,5 @@ agro_gdp = pd.merge(co2_nc, gdp_nrc,
                     left_on='Year',
                     right_on='Year')
 
-# save needed data to a new file
+# save needed data to a new file to add 
 agro_gdp.to_csv('data/co2_gdp_north.csv', sep='\t', index=False)

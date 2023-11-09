@@ -27,7 +27,7 @@ rule process_data:
         python3 src/processing.py
         """
 
-rule make_panel_plot:
+rule make_panel_plots:
     input:
         "data/co2_gdp_north.csv"
     output:

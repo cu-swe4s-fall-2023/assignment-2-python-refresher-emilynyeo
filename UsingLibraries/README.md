@@ -15,4 +15,4 @@ year.
 each country over the years.
 
 With so much accumulative evidence, climate change 
-unfortunately is undeniable.    
+unfortunately is undeniable :(  

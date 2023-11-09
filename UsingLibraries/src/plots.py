@@ -9,7 +9,7 @@ agro_gdp = pd.read_csv('data/co2_gdp_north.csv', sep='\t')
 # Set your panel
 fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(12, 10))
 
-# Line plot of Temperature change over the Years
+# Line plot of Temperature change over Years
 colors = {'United States of America': 'blue',
           'Mexico': 'orange',
           'Canada': 'green',
