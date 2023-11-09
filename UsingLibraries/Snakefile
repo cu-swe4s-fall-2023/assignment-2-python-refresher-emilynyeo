@@ -1,0 +1,39 @@
+rule all:
+    input:
+        "data/output_plots.png"
+
+rule download_data:
+    output:
+        "data/Agrofood_co2_emission.csv",
+        "data/IMF_GDP.csv"
+    shell:
+        """
+        mkdir -p data
+        cd data
+        wget -O Agrofood_co2_emission.csv \
+        "https://docs.google.com/uc?export=download&id=1Wytf3ryf9EtOwaloms8HEzLG0yjtRqxr"
+        wget -O IMF_GDP.csv \
+        "https://docs.google.com/uc?export=download&id=1tuoQ9UTW_XRKgBOBaTLtGXh8h0ytKvFp"
+        """
+
+rule process_data:
+    input:
+        "data/Agrofood_co2_emission.csv",
+        "data/IMF_GDP.csv"
+    output:
+        "data/co2_gdp_north.csv"
+    shell:
+        """
+        python3 src/processing.py
+        """
+
+rule make_panel_plot:
+    input:
+        "data/co2_gdp_north.csv"
+    output:
+        "data/output_plots.png"
+    shell:
+        """
+        python3 src/plots.py
+        """
+
