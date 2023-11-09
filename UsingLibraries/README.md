@@ -14,5 +14,8 @@ year.
 - D: The rise in total population (male and female) of 
 each country over the years.
 
+![output_plots](https://github.com/cu-swe4s-fall-2023/assignment-2-python-refresher-emilynyeo/assets/104112036/a4f8348f-8b55-4037-90be-14cb789a8513)
+
+
 With so much accumulative evidence, climate change 
 unfortunately is undeniable :(  
