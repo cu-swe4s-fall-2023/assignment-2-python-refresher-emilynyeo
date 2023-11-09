@@ -36,4 +36,3 @@ rule make_panel_plot:
         """
         python3 src/plots.py
         """
-

@@ -10,39 +10,43 @@ agro_gdp = pd.read_csv('data/co2_gdp_north.csv', sep='\t')
 fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(12, 10))
 
 # Line plot of Temperature change over the Years
-colors = {'United States of America': 'blue', 'Mexico': 'orange', 'Canada': 'green', 'Guatemala': 'red', 'United States': 'purple'}
+colors = {'United States of America': 'blue',
+          'Mexico': 'orange',
+          'Canada': 'green',
+          'Guatemala': 'red'}
+
 for country in agro_gdp['Area'].unique():
     country_data = agro_gdp[agro_gdp['Area'] == country]
-    ax1.plot(country_data['Year'], 
-        country_data['Average Temperature °C'], 
-        label=country, 
-        color=colors[country])
+    ax1.plot(country_data['Year'],
+             country_data['Average Temperature °C'],
+             label=country,
+             color=colors[country])
 
 # Scatter plot of emissions over the years
 for country in agro_gdp['Area'].unique():
     country_data = agro_gdp[agro_gdp['Area'] == country]
-    ax2.scatter(country_data['Year'], 
-    	country_data['total_emission'], 
-    	label=country, 
-    	color=colors[country])
+    ax2.scatter(country_data['Year'],
+                country_data['total_emission'],
+                label=country,
+                color=colors[country])
 
 # Scatter plot of GDP vs Total Emissions
 for country in agro_gdp['Area'].unique():
     country_data = agro_gdp[agro_gdp['Area'] == country]
-    ax3.scatter(country_data['United States_GDP'], 
-    	country_data['total_emission'], 
-    	label=country, 
-    	color=colors[country])
+    ax3.scatter(country_data['United States_GDP'],
+                country_data['total_emission'],
+                label=country,
+                color=colors[country])
 
 # Line plot of total population change over the Years
 for country in agro_gdp['Area'].unique():
     country_data = agro_gdp[agro_gdp['Area'] == country]
-    ax4.plot(country_data['Year'], 
-        country_data['total_population'], 
-        label=country, 
-        color=colors[country])
+    ax4.plot(country_data['Year'],
+             country_data['total_population'],
+             label=country,
+             color=colors[country])
 
-# Set titles and labels for all the plots 
+# Set titles and labels for all the plots
 ax1.set_title('A. Temperature Change Over the Years')
 ax1.set_xlabel('Year')
 ax1.set_ylabel('Average Temperature °C')
