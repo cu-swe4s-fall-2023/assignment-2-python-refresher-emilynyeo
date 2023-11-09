@@ -26,7 +26,7 @@ for col in gdp.columns:
 
 
 #getting only countries of interest
-co2_north = co2[co2['Area'].isin(['Mexico', 'Guatemala', 'United States', 'Canada'])]
+co2_north = co2[co2['Area'].isin(['Mexico', 'Guatemala', 'United States of America', 'Canada'])]
 gdp_north = gdp[gdp['Country'].isin(['United States', 'Mexico', 'Canada', 'Guatemala'])]
 
 
